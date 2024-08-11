@@ -1,0 +1,10 @@
+const { PDFDocument, PDFPage } = require('./path/to/pdf-lib');
+
+const doc = new PDFDocument();
+const page = doc.addPage();
+page.addText("Hello, World!", 100, 700);
+const pdfContent = doc.render();
+
+const fs = require('fs');
+fs.writeFileSync('output.pdf', pdfContent);
+console.log('PDF file has been generated.');
